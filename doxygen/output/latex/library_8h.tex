@@ -1,0 +1,103 @@
+\doxysection{library.\+h File Reference}
+\label{library_8h}\index{library.h@{library.h}}
+
+
+programmes de planification et d\textquotesingle{}affectation.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ calcul} (int a, int b)
+\begin{DoxyCompactList}\small\item\em dummy function pour tester compatibilité ctypes dans python \end{DoxyCompactList}\item 
+int $\ast$ \textbf{ planification} (int $\ast$c, int $\ast$hor, int $\ast$mois, int nbportes, char $\ast$freq)
+\begin{DoxyCompactList}\small\item\em la fonction planification permet d\textquotesingle{}affecter une requete vol vers des créneaux horaires en fonction du détail des requetes \end{DoxyCompactList}\item 
+int \textbf{ affectation} (int nbportes, int $\ast$statutportes, int $\ast$tailleportes, int capa\+Max)
+\begin{DoxyCompactList}\small\item\em Cette fonction récupère le nombre de portes, un tableau contenant leur disponibilité, un tableau contenant leurs tailles, et la taille de l\textquotesingle{}avion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+programmes de planification et d\textquotesingle{}affectation. 
+
+\begin{DoxyAuthor}{Author}
+Ouyed Ryan, Bosle Clément 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+123 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+30 décembre 2021
+\end{DoxyDate}
+Programme de planification et d\textquotesingle{}affectation ctypes python. 
+
+\doxysubsection{Function Documentation}
+\mbox{\label{library_8h_acf45542cad04d6dda832276cf3d4f79e}} 
+\index{library.h@{library.h}!affectation@{affectation}}
+\index{affectation@{affectation}!library.h@{library.h}}
+\doxysubsubsection{affectation()}
+{\footnotesize\ttfamily int affectation (\begin{DoxyParamCaption}\item[{int}]{nbportes,  }\item[{int $\ast$}]{statutportes,  }\item[{int $\ast$}]{tailleportes,  }\item[{int}]{capa\+Max }\end{DoxyParamCaption})}
+
+
+
+Cette fonction récupère le nombre de portes, un tableau contenant leur disponibilité, un tableau contenant leurs tailles, et la taille de l\textquotesingle{}avion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nbportes} & nombre de portes \\
+\hline
+{\em statutportes} & liste avec le statut associé a chacune des portes (libre =0 et occupé =1) \\
+\hline
+{\em tailleportes} & liste avec la taille de chaque porte (0=petite, 1=standard, 2=grande) \\
+\hline
+{\em capa\+Max} & capacité maximal du modèle de l\textquotesingle{}avion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int i+1 return le numero de la porte (égal à index de la porte + 1) à laquelle on a affecté le vol, -\/1 sinon. 
+\end{DoxyReturn}
+\mbox{\label{library_8h_a904b5795a198cd7078e3ac446091b044}} 
+\index{library.h@{library.h}!calcul@{calcul}}
+\index{calcul@{calcul}!library.h@{library.h}}
+\doxysubsubsection{calcul()}
+{\footnotesize\ttfamily int calcul (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+
+
+dummy function pour tester compatibilité ctypes dans python 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & entier random \\
+\hline
+{\em b} & meme chose que pour a \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int resultat de a+b 
+\end{DoxyReturn}
+\mbox{\label{library_8h_a4a135ad3e7cf142980f0f4b333fb7c87}} 
+\index{library.h@{library.h}!planification@{planification}}
+\index{planification@{planification}!library.h@{library.h}}
+\doxysubsubsection{planification()}
+{\footnotesize\ttfamily int $\ast$ planification (\begin{DoxyParamCaption}\item[{int $\ast$}]{c,  }\item[{int $\ast$}]{hor,  }\item[{int $\ast$}]{mois,  }\item[{int}]{nbportes,  }\item[{char $\ast$}]{freq }\end{DoxyParamCaption})}
+
+
+
+la fonction planification permet d\textquotesingle{}affecter une requete vol vers des créneaux horaires en fonction du détail des requetes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & liste qui donne le nombre de vols par jour de la compagnie \\
+\hline
+{\em hor} & nombre d\textquotesingle{}avions affectés pour chaque créneau \\
+\hline
+{\em mois} & liste avec la longueur des 4 mois en jours \\
+\hline
+{\em nbportes} & = nombre de portes dans l\textquotesingle{}aéroport \\
+\hline
+{\em freq} & = fréquence des requetes de vols (mensuel = 2, hebdomadaire = 1, journalier = 0) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int$\ast$ dates qui est une liste des créneaux associés à une requete 
+\end{DoxyReturn}
